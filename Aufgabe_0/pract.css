@@ -1,0 +1,12 @@
+
+body {
+        	font-family: 'Fjalla One', sans-serif;
+        	text-align: center;
+}
+        	
+#button {
+			display: block;
+			background-color: teal;
+			
+			padding-top: 3em;
+}
