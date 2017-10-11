@@ -64,6 +64,12 @@ function init() {
     crc.lineWidth = 1.5;
     crc.strokeStyle = "#262626";
     crc.stroke();
+    crc.beginPath();
+    crc.moveTo(0, 250);
+    crc.lineTo(450, 600);
+    crc.lineWidth = 1.5;
+    crc.strokeStyle = "#262626";
+    crc.stroke();
     //baum   (unten links)
     crc.fillStyle = "#8b5a2b";
     crc.fillRect(44, 557, 12, 23);
