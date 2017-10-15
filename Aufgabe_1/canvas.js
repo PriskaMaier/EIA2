@@ -1,3 +1,11 @@
+/*
+Aufgabe: Nr. 1 - Skipiste
+Name: Priska Maier
+Matrikel: 256326
+Datum: 11.10.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+ */
 window.addEventListener("load", init);
 function init() {
     let canvas = document.getElementsByTagName("canvas")[0];
@@ -200,3 +208,4 @@ function init() {
     crc.fillStyle = "#5a924f"; /* #228b22 */
     crc.fill();
 }
+//# sourceMappingURL=canvas.js.map

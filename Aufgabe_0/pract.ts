@@ -1,5 +1,5 @@
 
-function getName () : any  {
-        var name : any = prompt("Gib hier bitte deinen Namen ein:", " ");
+function getName () : void  {
+        var name : string = prompt("Gib hier bitte deinen Namen ein:", " ");
         alert("Hallo " + name + "!");
 }
