@@ -43,14 +43,14 @@ var Aufg_3;
         crc.fill();
         //kreis: x, y (mittelpunkt), radius, startwinkel, endwinkel, uhrzeigersinn
         //wolken
-        passingClouds = [Math.random() * 300 + 0 * 100 / (5 / 10),
-            Math.random() * 300,
-            Math.random() * 300 + 1 * 100 / (5 / 10),
-            Math.random() * 300,
-            Math.random() * 300 + 2 * 100 / (5 / 10),
-            Math.random() * 300,
-            Math.random() * 300 + 3 * 100 / (5 / 10),
-            Math.random() * 300];
+        passingClouds = [Math.random() * 250 + 0 * 100 / (5 / 8),
+            Math.random() * 250,
+            Math.random() * 250 + 1 * 100 / (5 / 8),
+            Math.random() * 250,
+            Math.random() * 250 + 2 * 100 / (5 / 8),
+            Math.random() * 250,
+            Math.random() * 250 + 3 * 100 / (5 / 8),
+            Math.random() * 250];
         // piste
         crc.beginPath();
         crc.moveTo(60, 0);
@@ -92,7 +92,7 @@ var Aufg_3;
         crc.strokeStyle = "#262626";
         crc.stroke();
         //schnee
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < 160; i++) {
             fallingSnow.push(Math.random() * 800, Math.random() * 600);
         }
         imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
@@ -171,16 +171,16 @@ var Aufg_3;
             drawCloud(passingClouds[2], passingClouds[3]);
             drawCloud(passingClouds[4], passingClouds[5]);
             drawCloud(passingClouds[6], passingClouds[7]);
-            if (passingClouds[0] > 800) {
+            if (passingClouds[0] > 900) {
                 passingClouds[0] = -100;
             }
-            else if (passingClouds[2] > 850) {
+            else if (passingClouds[2] > 900) {
                 passingClouds[2] = -100;
             }
-            else if (passingClouds[4] > 850) {
+            else if (passingClouds[4] > 900) {
                 passingClouds[4] = -100;
             }
-            else if (passingClouds[6] > 850) {
+            else if (passingClouds[6] > 900) {
                 passingClouds[6] = -100;
             }
         }
@@ -194,12 +194,12 @@ var Aufg_3;
             drawSnow(fallingSnow[i - 1], fallingSnow[i]);
         }
         //skifahrer
-        //        skifahrer[0] += 2 * speedSki;
-        //        skifahrer[1] += 1.4 * speedSki;
-        //        ski(skifahrer[0], skifahrer[1]);
+        //        runningSkier[0] += 2 * speed;
+        //        runningSkier[1] += 1.4 * speed;
+        //        drawSkier(runningSkier[0], runningSkier[1]);
         //        
-        //        if (skifahrer[0] > 810 && skifahrer[1] > 610) {
-        //            skifahrer = [-30, 100];
+        //        if (runningSkier[0] > 810 && runningSkier[1] > 610) {
+        //            runningSkier = [-30, 100];
         //        }
         window.setTimeout(animate, 110);
     }
