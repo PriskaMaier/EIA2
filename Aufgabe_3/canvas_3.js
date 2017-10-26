@@ -61,6 +61,8 @@ var Aufg_3;
         crc.closePath();
         crc.fillStyle = "#f2f2f2";
         crc.fill();
+        drawSkier(400, 50);
+        //        runningSkier = [0, 40];
         //feste b�ume
         drawTree(120, 460, "#5a924f");
         drawTree(240, 250, "#5a924f");
@@ -127,13 +129,13 @@ var Aufg_3;
         crc.fillStyle = "#ffffff";
         crc.fill();
     }
-    function drawRandomCloud() {
-        for (let i = 0; i <= 5; i++) {
-            let x = 10 + Math.random() * 800;
-            let y = 20 + Math.random() * 200;
-            drawCloud(x, y);
-        }
-    }
+    //    function drawRandomCloud () : void   {
+    //        for (let i: number = 0; i <= 5; i++) {
+    //            let x: number = 10 + Math.random() * 800;
+    //            let y: number = 20 + Math.random() * 200;
+    //            drawCloud(x, y);
+    //        }
+    //    }
     //    
     //    function animateClouds() : void   {
     //        console.log("timeout animation - wolken");
@@ -155,9 +157,36 @@ var Aufg_3;
         crc.strokeStyle = "#707070";
         crc.stroke();
     }
+    //skifahrer
+    function drawSkier(x, y) {
+        crc.beginPath();
+        crc.arc(x, y, 10, 0, 2 * Math.PI);
+        crc.fillStyle = "#ffe4e1";
+        crc.fill();
+        crc.beginPath();
+        crc.moveTo(x - 17, y + 3);
+        crc.lineTo(x + 4, y + 14);
+        crc.lineTo(x - 24, y + 49);
+        crc.lineTo(x - 46, y + 39);
+        crc.fillStyle = "#3a5fcd";
+        crc.fill();
+        crc.beginPath();
+        crc.moveTo(x - 60, y + 40);
+        crc.lineTo(x + 15, y + 70);
+        crc.lineTo(x + 21, y + 70);
+        crc.lineWidth = 3.2;
+        crc.lineCap = "round";
+        crc.stroke();
+        crc.beginPath();
+        crc.moveTo(x + 2, y + 30);
+        crc.lineTo(x - 65, y + 25);
+        crc.lineWidth = 2;
+        crc.lineCap = "round";
+        crc.stroke();
+    }
     let fallingSnow = [];
     let passingClouds = [];
-    let runningSkiers = [];
+    let runningSkier = [];
     function animate() {
         console.log("animation");
         crc.putImageData(imagedata, 0, 0);
@@ -194,8 +223,8 @@ var Aufg_3;
             drawSnow(fallingSnow[i - 1], fallingSnow[i]);
         }
         //skifahrer
-        //        runningSkier[0] += 2 * speed;
-        //        runningSkier[1] += 1.4 * speed;
+        //        runningSkier[0] += 2 * 5;
+        //        runningSkier[1] += 1.4 * 5;
         //        drawSkier(runningSkier[0], runningSkier[1]);
         //        
         //        if (runningSkier[0] > 810 && runningSkier[1] > 610) {
