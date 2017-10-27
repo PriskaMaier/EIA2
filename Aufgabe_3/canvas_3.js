@@ -159,28 +159,32 @@ var Aufg_3;
     }
     //skifahrer
     function drawSkier(x, y) {
+        //kopf
         crc.beginPath();
-        crc.arc(x, y, 10, 0, 2 * Math.PI);
+        crc.arc(x, y, 6, 0, 2 * Math.PI);
         crc.fillStyle = "#ffe4e1";
         crc.fill();
+        //k�rper
         crc.beginPath();
-        crc.moveTo(x - 17, y + 3);
-        crc.lineTo(x + 4, y + 14);
-        crc.lineTo(x - 24, y + 49);
-        crc.lineTo(x - 46, y + 39);
-        crc.fillStyle = "#3a5fcd";
+        crc.moveTo(x - 12, y + 2);
+        crc.lineTo(x, y + 10);
+        crc.lineTo(x - 15, y + 30);
+        crc.lineTo(x - 30, y + 24);
+        crc.fillStyle = "#6495ed";
         crc.fill();
+        //ski
         crc.beginPath();
-        crc.moveTo(x - 60, y + 40);
-        crc.lineTo(x + 15, y + 70);
-        crc.lineTo(x + 21, y + 70);
-        crc.lineWidth = 3.2;
+        crc.moveTo(x - 42, y + 22);
+        crc.lineTo(x, y + 40);
+        crc.lineTo(x + 6, y + 40);
+        crc.lineWidth = 2.8;
         crc.lineCap = "round";
         crc.stroke();
+        //skistock
         crc.beginPath();
-        crc.moveTo(x + 2, y + 30);
-        crc.lineTo(x - 65, y + 25);
-        crc.lineWidth = 2;
+        crc.moveTo(x, y + 18);
+        crc.lineTo(x - 40, y + 15);
+        crc.lineWidth = 1.8;
         crc.lineCap = "round";
         crc.stroke();
     }
@@ -213,6 +217,8 @@ var Aufg_3;
                 passingClouds[6] = -100;
             }
         }
+        let x = 0;
+        let y = 0;
         //schnee
         for (let i = 0; i < fallingSnow.length; i++) {
             i++;
