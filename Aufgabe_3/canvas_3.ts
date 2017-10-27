@@ -17,6 +17,16 @@ namespace Aufg_3    {
     
     let imagedata : ImageData;
     
+    let arrayX : number[] = [];
+    let arrayY : number[] = [];
+    
+    let fallingSnowX : number[] = [];
+    let fallingSnowY : number[] = [];
+    let passingCloudsX : number[] = [];
+    let passingCloudsY : number[] = [];
+    let runningSkiersX : number[] = [];
+    let runningSkiersY : number[] = [];
+    
     
     function init () : void {
         
@@ -56,16 +66,6 @@ namespace Aufg_3    {
         
         //kreis: x, y (mittelpunkt), radius, startwinkel, endwinkel, uhrzeigersinn
         
-        //wolken
-        passingClouds = [Math.random() * 250 + 0 * 100 / (5 / 8),
-                        Math.random() * 250,
-                        Math.random() * 250 + 1 * 100 / (5 / 8),
-                        Math.random() * 250,
-                        Math.random() * 250 + 2 * 100 / (5 / 8),
-                        Math.random() * 250,
-                        Math.random() * 250 + 3 * 100 / (5 / 8),
-                        Math.random() * 250];
-        
         // piste
         crc.beginPath();
         crc.moveTo(60, 0);
@@ -76,10 +76,6 @@ namespace Aufg_3    {
         crc.closePath();
         crc.fillStyle = "#f2f2f2";
         crc.fill();
-        
-        
-//        drawSkier(400, 300);
-        runningSkier = [0, 40];
         
         //feste bäume
         drawTree(120, 460, "#5a924f");
@@ -115,15 +111,31 @@ namespace Aufg_3    {
         crc.strokeStyle = "#262626";
         crc.stroke();
         
-        //schnee
-        for (let i : number = 0; i < 160; i++)   {
-            fallingSnow.push(Math.random() * 800, Math.random() * 600);
-        }
-        
         imagedata = crc.getImageData(0, 0, canvas.width, canvas.height);
        
         
+        for (let i : number = 0; i < 100; i++)  {
+            arrayX[i] = 10;
+            arrayY[i] = 100;        
+        }
+        
+        for (let i : number = 0; i < 1; i++)  {
+            runningSkiersX[i] = 0;
+            runningSkiersY[i] = 20 + Math.random() * 20;
+        }
+        
+        for (let i : number = 0; i < 6; i++)  {
+            passingCloudsX[i] = 10 + Math.random() * 800;
+            passingCloudsY[i] = 20 + Math.random() * 200;
+        }
+        
+        for (let i : number = 0; i < 160; i++)  {
+            fallingSnowX[i] = Math.random() * 800;
+            fallingSnowY[i] = Math.random() * 600;
+        }
+        
         animate();
+        
         
     }   /* init */
     
@@ -160,26 +172,6 @@ namespace Aufg_3    {
         crc.fillStyle = "#ffffff";
         crc.fill();
     }
-    
-//    function drawRandomCloud () : void   {
-//        for (let i: number = 0; i <= 5; i++) {
-//            let x: number = 10 + Math.random() * 800;
-//            let y: number = 20 + Math.random() * 200;
-//            drawCloud(x, y);
-//        }
-//    }
-//    
-//    function animateClouds() : void   {
-//        console.log("timeout animation - wolken");
-//        crc.putImageData(imagedata, 0, 0);
-//        
-//        for (let i : number = 0; i < x.length; i++)    {
-//            x[i] += 1;
-//        }
-//        
-//        window.setTimeout(animateClouds, 700);
-//    }
-    
     
     //schneeflocken
     function drawSnow (x : number, y : number) : void   {
@@ -225,73 +217,45 @@ namespace Aufg_3    {
     }
     
     
-    let fallingSnow : number[] = [];
-    let passingClouds : number[] = [];
-    let runningSkier : number[] = [];
-
     
     function animate() : void   {
+        
         console.log("animation");
         crc.putImageData(imagedata, 0, 0);
         
         //skifahrer
-        runningSkier[0] += 1.8 * 8;
-        runningSkier[1] += 1.4 * 8;
-        drawSkier(runningSkier[0], runningSkier[1]);
-        
-        if (runningSkier[0] > 820 && runningSkier[1] > 620) {
-            runningSkier = [0, 40];
+        for (let i : number = 0; i < runningSkiersX.length; i++)    {
+            
+            if (runningSkiersX[i] > 830)    {
+                runningSkiersX[i] = 0;
+                runningSkiersY[i] = 20;
+            }
+            
+            runningSkiersX[i] += 15;
+            runningSkiersY[i] += 10; 
+            drawSkier(runningSkiersX[i], runningSkiersY[i]);
         }
         
         //wolken
-        for (let i : number = 0; i < 5; i++)    {
-            passingClouds[0] += i;
-            passingClouds[2] += i;
-            passingClouds[4] += i;
-            passingClouds[6] += i;
-            drawCloud(passingClouds[0], passingClouds[1]);
-            drawCloud(passingClouds[2], passingClouds[3]);
-            drawCloud(passingClouds[4], passingClouds[5]);
-            drawCloud(passingClouds[6], passingClouds[7]);
+        for (let i : number = 0; i < passingCloudsX.length; i++)    {
             
-            if (passingClouds[0] > 900) {
-                passingClouds[0] = -100;
+            if (passingCloudsX[i] > 900)    {
+                passingCloudsX[i] = 0;
             }
-            else if (passingClouds[2] > 900) {
-                passingClouds[2] = -100;
-            }
-            else if (passingClouds[4] > 900) {
-                passingClouds[4] = -100;
-            }
-            else if (passingClouds[6] > 900) {
-                passingClouds[6] = -100;
-            }
-        } 
+            
+            passingCloudsX[i] += 6; 
+            drawCloud(passingCloudsX[i], passingCloudsY[i]);
+        }
         
         //schnee
-        for (let i: number = 0; i < fallingSnow.length; i++) {
-            i++
+        for (let i : number = 0; i < fallingSnowX.length; i++)    {
             
-            fallingSnow[i] += 4;
-    
-            if (fallingSnow[i] > 600) {
-                fallingSnow[i] = 0;
+            if (fallingSnowY[i] > 610)    {
+                fallingSnowY[i] = 0;
             }
             
-            drawSnow(fallingSnow[i - 1], fallingSnow[i]);
-            
-//            fallingSnow[i].y += fallingSnow[i].speed;
-//            
-//            if (fallingSnow[i].y > 600) {
-//                fallingSnow[i].y = -50;
-//                fallingSnow[i].x = Math.random() * 800;
-//            }
-//            
-//            var fallingSn = new Object();
-//            fallingSn["x"] = Math.random() * 800;
-//            fallingSn["y"] = Math.random() * 5;
-//            fallingSn["speed"] = 3 + Math.random() * 800;
-//            fallingSnow.push(fallingSn);
+            fallingSnowY[i] += 15; 
+            drawSnow(fallingSnowX[i], fallingSnowY[i]);
         }
         
         window.setTimeout(animate, 110);
