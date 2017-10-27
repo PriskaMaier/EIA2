@@ -78,8 +78,8 @@ namespace Aufg_3    {
         crc.fill();
         
         
-        drawSkier(400, 50);
-//        runningSkier = [0, 40];
+//        drawSkier(400, 300);
+        runningSkier = [0, 40];
         
         //feste bäume
         drawTree(120, 460, "#5a924f");
@@ -205,7 +205,7 @@ namespace Aufg_3    {
         crc.lineTo(x, y + 10);
         crc.lineTo(x - 15, y + 30);
         crc.lineTo(x - 30, y + 24);
-        crc.fillStyle = "#6495ed";
+        crc.fillStyle = "#cd3333";
         crc.fill();
         //ski
         crc.beginPath();
@@ -234,6 +234,15 @@ namespace Aufg_3    {
         console.log("animation");
         crc.putImageData(imagedata, 0, 0);
         
+        //skifahrer
+        runningSkier[0] += 1.8 * 8;
+        runningSkier[1] += 1.4 * 8;
+        drawSkier(runningSkier[0], runningSkier[1]);
+        
+        if (runningSkier[0] > 820 && runningSkier[1] > 620) {
+            runningSkier = [0, 40];
+        }
+        
         //wolken
         for (let i : number = 0; i < 5; i++)    {
             passingClouds[0] += i;
@@ -257,10 +266,7 @@ namespace Aufg_3    {
             else if (passingClouds[6] > 900) {
                 passingClouds[6] = -100;
             }
-        }
-        
-        let x = 0;
-        let y = 0;
+        } 
         
         //schnee
         for (let i: number = 0; i < fallingSnow.length; i++) {
@@ -287,15 +293,6 @@ namespace Aufg_3    {
 //            fallingSn["speed"] = 3 + Math.random() * 800;
 //            fallingSnow.push(fallingSn);
         }
-        
-        //skifahrer
-//        runningSkier[0] += 2 * 5;
-//        runningSkier[1] += 1.4 * 5;
-//        drawSkier(runningSkier[0], runningSkier[1]);
-//        
-//        if (runningSkier[0] > 810 && runningSkier[1] > 610) {
-//            runningSkier = [-30, 100];
-//        }
         
         window.setTimeout(animate, 110);
     }

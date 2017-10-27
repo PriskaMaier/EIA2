@@ -61,8 +61,8 @@ var Aufg_3;
         crc.closePath();
         crc.fillStyle = "#f2f2f2";
         crc.fill();
-        drawSkier(400, 50);
-        //        runningSkier = [0, 40];
+        //        drawSkier(400, 300);
+        runningSkier = [0, 40];
         //feste b�ume
         drawTree(120, 460, "#5a924f");
         drawTree(240, 250, "#5a924f");
@@ -170,7 +170,7 @@ var Aufg_3;
         crc.lineTo(x, y + 10);
         crc.lineTo(x - 15, y + 30);
         crc.lineTo(x - 30, y + 24);
-        crc.fillStyle = "#6495ed";
+        crc.fillStyle = "#cd3333";
         crc.fill();
         //ski
         crc.beginPath();
@@ -194,6 +194,13 @@ var Aufg_3;
     function animate() {
         console.log("animation");
         crc.putImageData(imagedata, 0, 0);
+        //skifahrer
+        runningSkier[0] += 1.8 * 8;
+        runningSkier[1] += 1.4 * 8;
+        drawSkier(runningSkier[0], runningSkier[1]);
+        if (runningSkier[0] > 820 && runningSkier[1] > 620) {
+            runningSkier = [0, 40];
+        }
         //wolken
         for (let i = 0; i < 5; i++) {
             passingClouds[0] += i;
@@ -217,8 +224,6 @@ var Aufg_3;
                 passingClouds[6] = -100;
             }
         }
-        let x = 0;
-        let y = 0;
         //schnee
         for (let i = 0; i < fallingSnow.length; i++) {
             i++;
@@ -228,14 +233,6 @@ var Aufg_3;
             }
             drawSnow(fallingSnow[i - 1], fallingSnow[i]);
         }
-        //skifahrer
-        //        runningSkier[0] += 2 * 5;
-        //        runningSkier[1] += 1.4 * 5;
-        //        drawSkier(runningSkier[0], runningSkier[1]);
-        //        
-        //        if (runningSkier[0] > 810 && runningSkier[1] > 610) {
-        //            runningSkier = [-30, 100];
-        //        }
         window.setTimeout(animate, 110);
     }
 })(Aufg_3 || (Aufg_3 = {})); /* namespace */
