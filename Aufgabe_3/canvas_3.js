@@ -2,11 +2,10 @@
 Aufgabe: Nr. 3 - Schneegest�ber
 Name: Priska Maier
 Matrikel: 256326
-Datum: 25.10.17
+Datum: 28.10.17
         
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
-//http://jsfiddle.net/L4Qfb/21/
 var Aufg_3;
 (function (Aufg_3) {
     window.addEventListener("load", init);
@@ -96,8 +95,8 @@ var Aufg_3;
             arrayY[i] = 100;
         }
         for (let i = 0; i < 1; i++) {
-            runningSkiersX[i] = 0;
-            runningSkiersY[i] = 20 + Math.random() * 20;
+            runningSkiersX[i] = -120;
+            runningSkiersY[i] = Math.random() * 200 - 120;
         }
         for (let i = 0; i < 6; i++) {
             passingCloudsX[i] = 10 + Math.random() * 800;
@@ -109,6 +108,7 @@ var Aufg_3;
         }
         animate();
     } /* init */
+    //b�ume
     function drawTree(x, y, color) {
         crc.fillStyle = "#8b5a2b";
         crc.fillRect(x - 6, y + 60, 12, 15);
@@ -149,34 +149,36 @@ var Aufg_3;
         crc.stroke();
     }
     //skifahrer
-    function drawSkier(x, y) {
+    function drawSkier(x, y, colorHead, colorBody) {
         //kopf
         crc.beginPath();
-        crc.arc(x, y, 6, 0, 2 * Math.PI);
-        crc.fillStyle = "#ffe4e1";
+        crc.arc(x, y, 5, 0, 2 * Math.PI);
+        crc.fillStyle = colorHead;
         crc.fill();
         //k�rper
         crc.beginPath();
-        crc.moveTo(x - 12, y + 2);
-        crc.lineTo(x, y + 10);
+        crc.moveTo(x - 10, y + 2);
+        crc.lineTo(x, y + 8);
         crc.lineTo(x - 15, y + 30);
-        crc.lineTo(x - 30, y + 24);
-        crc.fillStyle = "#cd3333";
+        crc.lineTo(x - 26, y + 22);
+        crc.fillStyle = colorBody;
         crc.fill();
         //ski
         crc.beginPath();
-        crc.moveTo(x - 42, y + 22);
-        crc.lineTo(x, y + 40);
-        crc.lineTo(x + 6, y + 40);
-        crc.lineWidth = 2.8;
+        crc.moveTo(x - 37, y + 25);
+        crc.lineTo(x - 10, y + 42);
+        crc.lineTo(x - 6, y + 43);
+        crc.lineWidth = 2.5;
         crc.lineCap = "round";
+        crc.strokeStyle = "#000000";
         crc.stroke();
         //skistock
         crc.beginPath();
-        crc.moveTo(x, y + 18);
-        crc.lineTo(x - 40, y + 15);
-        crc.lineWidth = 1.8;
+        crc.moveTo(x - 2, y + 16);
+        crc.lineTo(x - 38, y + 12);
+        crc.lineWidth = 1.5;
         crc.lineCap = "round";
+        crc.strokeStyle = "#000000";
         crc.stroke();
     }
     function animate() {
@@ -184,13 +186,15 @@ var Aufg_3;
         crc.putImageData(imagedata, 0, 0);
         //skifahrer
         for (let i = 0; i < runningSkiersX.length; i++) {
-            if (runningSkiersX[i] > 830) {
-                runningSkiersX[i] = 0;
-                runningSkiersY[i] = 20;
+            if (runningSkiersX[i] > 820) {
+                runningSkiersX[i] = -120;
+                runningSkiersY[i] = Math.random() * 200 - 120;
             }
             runningSkiersX[i] += 15;
             runningSkiersY[i] += 10;
-            drawSkier(runningSkiersX[i], runningSkiersY[i]);
+            drawSkier(runningSkiersX[i], runningSkiersY[i], "#ffdab9", "#fa8072");
+            drawSkier(runningSkiersX[i] - 250, runningSkiersY[i] + 100, "#eecbad", "#ab82ff");
+            drawSkier(runningSkiersX[i] + 100, runningSkiersY[i] + 150, "#eec591", "#4f94cd");
         }
         //wolken
         for (let i = 0; i < passingCloudsX.length; i++) {
@@ -205,7 +209,7 @@ var Aufg_3;
             if (fallingSnowY[i] > 610) {
                 fallingSnowY[i] = 0;
             }
-            fallingSnowY[i] += 15;
+            fallingSnowY[i] += 15 + Math.round(Math.random() * 6);
             drawSnow(fallingSnowX[i], fallingSnowY[i]);
         }
         window.setTimeout(animate, 110);
