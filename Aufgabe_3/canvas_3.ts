@@ -139,7 +139,6 @@ namespace Aufg_3    {
     }   /* init */
     
     
-    
     //bäume
     function drawTree (x : number, y : number, color : string) : void  {
         crc.fillStyle = "#8b5a2b";
