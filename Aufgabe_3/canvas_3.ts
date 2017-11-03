@@ -261,7 +261,7 @@ namespace Aufg_3    {
             drawSnow(fallingSnowX[i], fallingSnowY[i]);
         }
         
-        window.setTimeout(animate, 110);
+        window.setTimeout(animate, 80);
     }
 
     

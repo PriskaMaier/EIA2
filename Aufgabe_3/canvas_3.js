@@ -212,7 +212,7 @@ var Aufg_3;
             fallingSnowY[i] += 15 + Math.round(Math.random() * 6);
             drawSnow(fallingSnowX[i], fallingSnowY[i]);
         }
-        window.setTimeout(animate, 110);
+        window.setTimeout(animate, 80);
     }
 })(Aufg_3 || (Aufg_3 = {})); /* namespace */
 //# sourceMappingURL=canvas_3.js.map
