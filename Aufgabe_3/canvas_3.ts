@@ -2,7 +2,7 @@
 Aufgabe: Nr. 3 - Schneegestöber
 Name: Priska Maier
 Matrikel: 256326
-Datum: 28.10.17
+Datum: 04.11.17
         
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
@@ -123,6 +123,29 @@ namespace Aufg_3    {
             runningSkiersY[i] = Math.random() * 200 - 120;
         }
         
+        for (let i : number = 0; i < 4; i++)    {
+        
+            if (i == 0)   {
+                runningSkiersX[i] = -50;
+                runningSkiersY[i] = 100;
+            }
+                
+            else if (i == 1)  { 
+                runningSkiersX[i] = -250;
+                runningSkiersY[i] = 200;
+            }
+                
+            else if (i == 2)  {
+                runningSkiersX[i] = -400;
+                runningSkiersY[i] = 300;
+            } 
+                
+            else if (i == 3)  {
+                runningSkiersX[i] = -500;
+                runningSkiersY[i] = -150;
+            }
+        }
+        
         for (let i : number = 0; i < 6; i++)  {
             passingCloudsX[i] = 10 + Math.random() * 800;
             passingCloudsY[i] = 20 + Math.random() * 200;
@@ -225,18 +248,18 @@ namespace Aufg_3    {
         crc.putImageData(imagedata, 0, 0);
         
         //skifahrer
-        for (let i : number = 0; i < runningSkiersX.length; i++)    {
+        for (let i : number = 0; i < 4; i++)    {
             
             if (runningSkiersX[i] > 820)    {
                 runningSkiersX[i] = -120;
                 runningSkiersY[i] = Math.random() * 200 - 120;
             }
             
-            runningSkiersX[i] += 15;
-            runningSkiersY[i] += 10; 
+            runningSkiersX[i] += 25;
+            runningSkiersY[i] += 21; 
             drawSkier(runningSkiersX[i], runningSkiersY[i], "#ffdab9", "#fa8072");
-            drawSkier(runningSkiersX[i] - 250, runningSkiersY[i] + 100, "#eecbad", "#ab82ff");
-            drawSkier(runningSkiersX[i] + 100, runningSkiersY[i] + 150, "#eec591", "#4f94cd");
+//            drawSkier(runningSkiersX[i], runningSkiersY[i], "#eecbad", "#ab82ff");
+//            drawSkier(runningSkiersX[i], runningSkiersY[i], "#eec591", "#4f94cd");      
         }
         
         //wolken
@@ -261,7 +284,7 @@ namespace Aufg_3    {
             drawSnow(fallingSnowX[i], fallingSnowY[i]);
         }
         
-        window.setTimeout(animate, 80);
+        window.setTimeout(animate, 90);
     }
 
     
