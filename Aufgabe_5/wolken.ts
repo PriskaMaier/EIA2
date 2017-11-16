@@ -2,7 +2,7 @@
 Aufgabe: Nr. 5 - Objektorientierte Skipiste
 Name: Priska Maier
 Matrikel: 256326
-Datum: 18.11.17
+Datum: 16.11.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
