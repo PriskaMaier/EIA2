@@ -1,0 +1,31 @@
+/*
+Aufgabe: Nr. 6 - 
+Name: Priska Maier
+Matrikel: 256326
+Datum: 21.11.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+ 
+namespace Aufg_6    {
+    
+    export class MovingObjects {
+        x : number;
+        y : number
+        
+        constructor (_x : number, _y : number)  {
+            this.x = _x;
+            this.y = _y;
+            this.draw();
+        }
+        
+        draw() : void { }
+        
+        move() : void {
+            this.x += Math.random() * 200;
+            this.y += Math.random() * 200;
+        }
+        
+    }
+}
