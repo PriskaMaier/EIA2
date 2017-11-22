@@ -1,8 +1,8 @@
 /*
-Aufgabe: Nr. 6 -
+Aufgabe: Nr. 6 - Polymorphe Skipiste
 Name: Priska Maier
 Matrikel: 256326
-Datum: 21.11.17
+Datum: 22.11.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
