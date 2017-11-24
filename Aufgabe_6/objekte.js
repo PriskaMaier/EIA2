@@ -15,10 +15,7 @@ var Aufg_6;
             this.draw();
         }
         draw() { }
-        move() {
-            this.x += Math.random() * 200;
-            this.y += Math.random() * 200;
-        }
+        move() { }
     }
     Aufg_6.MovingObjects = MovingObjects;
 })(Aufg_6 || (Aufg_6 = {}));

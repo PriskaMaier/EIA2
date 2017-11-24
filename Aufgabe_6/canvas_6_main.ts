@@ -105,11 +105,11 @@ namespace Aufg_6    {
         //skifahrer
         for (let i : number = 0; i < n_skiers; i++)  {
             let sk = new Skiers (Math.random() * 200 - 300,
-                                           Math.random() * 300 - 200,
-                                           Math.random() * 3 + 22,
-                                           Math.random() * 3 + 18,
-                                           "hsl(20, 50%, 80%)",
-                                           "hsl(" + Math.random() * 360 + ", 45%, 65%)");
+                                 Math.random() * 300 - 200,
+                                 Math.random() * 3 + 22,
+                                 Math.random() * 3 + 18,
+                                 "hsl(20, 50%, 80%)",
+                                 "hsl(" + Math.random() * 360 + ", 45%, 65%)");
             objects.push(sk);
         }
         

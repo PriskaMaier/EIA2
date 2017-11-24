@@ -22,10 +22,7 @@ namespace Aufg_6    {
         
         draw() : void { }
         
-        move() : void {
-            this.x += Math.random() * 200;
-            this.y += Math.random() * 200;
-        }
+        move() : void { }
         
     }
 }
