@@ -65,11 +65,11 @@ var Aufg_7;
         for (let i = 0; i < students.length; i++) {
             if (students[i].matrikel == _matrikel) {
                 q = true;
-                let geschlecht = students[i].geschlecht ? "weiblich" : "m\u00e4nnlich";
+                let g = students[i].geschlecht ? "weiblich" : "m\u00e4nnlich";
                 return "Gefundene Daten zur Matrikelnummer: " + students[i].matrikel + "\n" +
                     "\nName: " + students[i].vorname + students[i].name +
                     "\nAlter: " + students[i].alter +
-                    "\nGeschlecht: " + geschlecht +
+                    "\nGeschlecht: " + g +
                     "\nKommentar: " + students[i].kommentar;
             }
         }

@@ -100,12 +100,12 @@ namespace Aufg_7    {
                 
                 q = true;
                 
-                let geschlecht : string = students[i].geschlecht ? "weiblich": "m\u00e4nnlich";
+                let g : string = students[i].geschlecht ? "weiblich" : "m\u00e4nnlich";
                 
                 return "Gefundene Daten zur Matrikelnummer: " + students[i].matrikel + "\n" +
                     "\nName: " + students[i].vorname + students[i].name +
                     "\nAlter: " + students[i].alter +
-                    "\nGeschlecht: " + geschlecht +
+                    "\nGeschlecht: " + g +
                     "\nKommentar: " + students[i].kommentar;
             }
         }
