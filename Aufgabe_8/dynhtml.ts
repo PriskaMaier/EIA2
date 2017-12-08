@@ -24,13 +24,13 @@ namespace Aufg_8    {
         
         else {
             for (let i = 0; i < parseInt(n); i++) {
-                init(Math.random() * window.innerWidth - 100, Math.random() * window.innerHeight - 100, Math.random() * 360);
+                draw(Math.random() * window.innerWidth - 100, Math.random() * window.innerHeight - 100, Math.random() * 360);
             }
         }
         
     }
     
-    function init (x : number, y : number, color : number) : void {
+    function draw (x : number, y : number, color : number) : void {
         
         let div = document.createElement("div");
         
