@@ -40,7 +40,7 @@ namespace Aufg_9    {
         l_div.style.height = "40px";
 
         l_div.style.margin = ".5em 0";
-        l_div.style.lineHeight = "50px";
+        l_div.style.lineHeight = "45px";
            
         l_div.style.backgroundColor = "#4e4f4e";
         l_div.style.border = "2px solid black";
@@ -84,7 +84,7 @@ namespace Aufg_9    {
         l_placeddiv.style.position = "absolute";
         l_placeddiv.style.left = _event.pageX  - 20 + "px";
         l_placeddiv.style.top = _event.pageY  - 20 + "px";
-        l_placeddiv.style.lineHeight = "50px";
+        l_placeddiv.style.lineHeight = "45px";
         
         l_placeddiv.style.width = "40px";
         l_placeddiv.style.height = "40px";
