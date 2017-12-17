@@ -40,12 +40,10 @@ namespace Aufg_9    {
         l_div.style.height = "45px";
 
         l_div.style.margin = ".5em 0";
-//        l_div.style.padding = ".2em 0";
         l_div.style.lineHeight = "50px";
            
         l_div.style.backgroundColor = "#4e4f4e";
         l_div.style.border = "2px solid black";
-//        l_div.style.opacity = ".6";
    
         l_div.style.cursor = "pointer";
 
@@ -66,8 +64,8 @@ namespace Aufg_9    {
         
         let t_div : HTMLDivElement = document.createElement("div");
         
-        t_div.style.width = "80em";
-        t_div.style.height = "38em";
+        t_div.style.width = "75em";
+        t_div.style.height = "30em";
         
         t_div.style.margin = "1em 0";
         
@@ -91,7 +89,7 @@ namespace Aufg_9    {
         l_placeddiv.style.width = "45px";
         l_placeddiv.style.height = "45px";
            
-        l_placeddiv.style.backgroundColor = "hsl(" + Math.random() * 360 + ", 30%, 70%)";
+        l_placeddiv.style.backgroundColor = "hsl(" + Math.random() * 360 + ", 50%, 70%)";
         
         l_placeddiv.style.cursor = "default";
 
@@ -113,7 +111,8 @@ namespace Aufg_9    {
         
             let click : HTMLDivElement = <HTMLDivElement>_event.target;
         
-            click.style.backgroundColor = "#c8f6c4";          
+            click.style.backgroundColor = "#ebebeb";
+            click.style.color = "black";      
             
             selectedLetter = click.id;
              
@@ -127,50 +126,7 @@ namespace Aufg_9    {
                     div_list[i].style.color = "white";
                 }
             }
-    }
-    
-//    //buchstaben löschen
-//    function deleteLetter(_l: string): void {
-//
-//        for(let i: number = 0; i < letters.length; i++) {
-//            
-//            if (_l == letters[i]) {   
-//                document.getElementById("_letter").removeChild(letters[i].HTMLDivElement);
-//                letters.splice(i, 1);
-//            }
-//        }
-//    }
-//    
-//    function handleKeyDown(event: KeyboardEvent): void {
-//        
-//        let altDown : boolean;
-//
-//        for(let i: number = 0; i < letters.length; i++) {
-//            
-//            if (event.keyCode == letters[i].id) {
-//                selectedLetter(letters[i]);
-//            }
-//        }
-//        
-//        if (event.keyCode == 18) {
-//       
-//            if (selectedLetter != undefined)   {
-//                l_placeddiv.addEventListener("click", deleteLetter);
-//                let click_target: HTMLDivElement = <HTMLDivElement>_event.target;
-//            }
-//            
-//            altDown = true;
-//        }
-//        
-//    function keyUp(event: KeyboardEvent): void {
-//            //wenn alt losgelassen wird -> setzt boolean wieder zurueck damit wieder neue chars platziert werden koennen
-//        if (event.keyCode == 18) {
-//            this.altDown = false;
-//        }
-//    }
-    
-    //    "Key" + letters[i]    keydown
-    
+    }  
     
 }
 

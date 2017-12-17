@@ -26,11 +26,9 @@ var Aufg_9;
         l_div.style.width = "45px";
         l_div.style.height = "45px";
         l_div.style.margin = ".5em 0";
-        //        l_div.style.padding = ".2em 0";
         l_div.style.lineHeight = "50px";
         l_div.style.backgroundColor = "#4e4f4e";
         l_div.style.border = "2px solid black";
-        //        l_div.style.opacity = ".6";
         l_div.style.cursor = "pointer";
         l_div.style.fontSize = "30px";
         l_div.style.color = "white";
@@ -43,8 +41,8 @@ var Aufg_9;
     //textfeld erzeugen
     function drawTextBox() {
         let t_div = document.createElement("div");
-        t_div.style.width = "80em";
-        t_div.style.height = "38em";
+        t_div.style.width = "75em";
+        t_div.style.height = "30em";
         t_div.style.margin = "1em 0";
         t_div.style.backgroundColor = "#6e766d";
         t_div.addEventListener("click", placeLetters);
@@ -59,7 +57,7 @@ var Aufg_9;
         l_placeddiv.style.lineHeight = "50px";
         l_placeddiv.style.width = "45px";
         l_placeddiv.style.height = "45px";
-        l_placeddiv.style.backgroundColor = "hsl(" + Math.random() * 360 + ", 30%, 70%)";
+        l_placeddiv.style.backgroundColor = "hsl(" + Math.random() * 360 + ", 50%, 70%)";
         l_placeddiv.style.cursor = "default";
         l_placeddiv.style.fontSize = "30px";
         l_placeddiv.innerText = selectedLetter;
@@ -73,7 +71,8 @@ var Aufg_9;
     //angeklickter buchstabe ausw�hlen und hervorheben
     function handleClick(_event) {
         let click = _event.target;
-        click.style.backgroundColor = "#c8f6c4";
+        click.style.backgroundColor = "#ebebeb";
+        click.style.color = "black";
         selectedLetter = click.id;
         let div_list = document.getElementsByClassName("letterbox");
         for (let i = 0; i < div_list.length; i++) {
