@@ -23,8 +23,8 @@ var Aufg_9;
     // buchstaben oben erzeugen
     function drawLetterBox(_letters) {
         let l_div = document.createElement("div");
-        l_div.style.width = "45px";
-        l_div.style.height = "45px";
+        l_div.style.width = "40px";
+        l_div.style.height = "40px";
         l_div.style.margin = ".5em 0";
         l_div.style.lineHeight = "50px";
         l_div.style.backgroundColor = "#4e4f4e";
@@ -52,11 +52,11 @@ var Aufg_9;
     function placeLetters(_event) {
         let l_placeddiv = document.createElement("div");
         l_placeddiv.style.position = "absolute";
-        l_placeddiv.style.left = _event.pageX - 22 + "px";
-        l_placeddiv.style.top = _event.pageY - 22 + "px";
+        l_placeddiv.style.left = _event.pageX - 20 + "px";
+        l_placeddiv.style.top = _event.pageY - 20 + "px";
         l_placeddiv.style.lineHeight = "50px";
-        l_placeddiv.style.width = "45px";
-        l_placeddiv.style.height = "45px";
+        l_placeddiv.style.width = "40px";
+        l_placeddiv.style.height = "40px";
         l_placeddiv.style.backgroundColor = "hsl(" + Math.random() * 360 + ", 50%, 70%)";
         l_placeddiv.style.cursor = "default";
         l_placeddiv.style.fontSize = "30px";
