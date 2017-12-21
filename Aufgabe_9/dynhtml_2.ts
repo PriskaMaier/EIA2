@@ -14,18 +14,13 @@ namespace Aufg_9    {
     
     let selectedLetter : string;
     
+    let letters : string[] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    
     function init (): void {
-
-        let letters : string[] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-        let n : number = letters.length;
-
-        if (n == letters.length) {
 
             for (let i: number = 0; i < letters.length; i++) {
                 drawLetterBox(letters[i]);
             }
-        }
 
         drawTextBox();
     }
@@ -79,6 +74,11 @@ namespace Aufg_9    {
     // ausgewählte buchstaben im textfeld platzieren
     function placeLetters (_event: MouseEvent) : void {
         
+        //verhindert erneutes platzieren während alt gedrückt ist
+        if (_event.altKey == true)  {
+            return;
+        }
+        
         let l_placeddiv: HTMLDivElement = document.createElement("div");
 
         l_placeddiv.style.position = "absolute";
@@ -103,11 +103,13 @@ namespace Aufg_9    {
     
             let click_target: HTMLDivElement = <HTMLDivElement>_event.target;
         }
+        
+        l_placeddiv.addEventListener("click", deleteLetter);
     }
 
 
     //angeklickter buchstabe auswählen und hervorheben
-    function handleClick(_event: MouseEvent) : void {
+    function handleClick (_event: MouseEvent) : void {
         
             let click : HTMLDivElement = <HTMLDivElement>_event.target;
         
@@ -126,7 +128,34 @@ namespace Aufg_9    {
                     div_list[i].style.color = "white";
                 }
             }
-    }  
+    }
+    
+//    function handleKeyDown (_event : KeyboardEvent) : void {
+//        
+//        for (let i : number = 0; i < letters.length; i++)   {
+//            
+//            if (String.fromCharCode(_event.keyCode) == letters[i].innerHTML)   {
+//                selectedLetter = letters[i];
+//                handleClick;
+//                placeLetters;
+//            }
+//        }
+//    }
+    
+    function handleAlt (_event : KeyboardEvent) : void  {
+        
+        if (_event.keyCode == 18)   {
+            deleteLetter;
+        }
+    }
+    
+    function deleteLetter(click: MouseEvent): void {
+        
+        let l: HTMLDivElement = <HTMLDivElement> click.target;
+        
+        document.addEventListener("keypressed", handleAlt);
+        document.body.removeChild(l);
+    }
     
 }
 

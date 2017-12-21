@@ -10,13 +10,10 @@ var Aufg_9;
 (function (Aufg_9) {
     window.addEventListener("load", init);
     let selectedLetter;
+    let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     function init() {
-        let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-        let n = letters.length;
-        if (n == letters.length) {
-            for (let i = 0; i < letters.length; i++) {
-                drawLetterBox(letters[i]);
-            }
+        for (let i = 0; i < letters.length; i++) {
+            drawLetterBox(letters[i]);
         }
         drawTextBox();
     }
@@ -50,6 +47,10 @@ var Aufg_9;
     }
     // ausgew�hlte buchstaben im textfeld platzieren
     function placeLetters(_event) {
+        //verhindert erneutes platzieren w�hrend alt gedr�ckt ist
+        if (_event.altKey == true) {
+            return;
+        }
         let l_placeddiv = document.createElement("div");
         l_placeddiv.style.position = "absolute";
         l_placeddiv.style.left = _event.pageX - 20 + "px";
@@ -67,6 +68,7 @@ var Aufg_9;
             document.body.appendChild(l_placeddiv);
             let click_target = _event.target;
         }
+        l_placeddiv.addEventListener("click", deleteLetter);
     }
     //angeklickter buchstabe ausw�hlen und hervorheben
     function handleClick(_event) {
@@ -81,6 +83,27 @@ var Aufg_9;
                 div_list[i].style.color = "white";
             }
         }
+    }
+    //    function handleKeyDown (_event : KeyboardEvent) : void {
+    //        
+    //        for (let i : number = 0; i < letters.length; i++)   {
+    //            
+    //            if (String.fromCharCode(_event.keyCode) == letters[i].innerHTML)   {
+    //                selectedLetter = letters[i];
+    //                handleClick;
+    //                placeLetters;
+    //            }
+    //        }
+    //    }
+    function handleAlt(_event) {
+        if (_event.keyCode == 18) {
+            deleteLetter;
+        }
+    }
+    function deleteLetter(click) {
+        let l = click.target;
+        document.addEventListener("keypressed", handleAlt);
+        document.body.removeChild(l);
     }
 })(Aufg_9 || (Aufg_9 = {}));
 //# sourceMappingURL=dynhtml_2.js.map
