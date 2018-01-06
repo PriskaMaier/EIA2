@@ -1,0 +1,66 @@
+/*
+Aufgabe: Nr. 10 - FormElements: Weihnachtsbaumkonfigurator
+Name: Priska Maier
+Matrikel: 256326
+Datum: 07.01.18
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+ */
+ 
+
+body	{
+		font-family: 'Oswald', sans-serif;
+}
+
+#bestellung-container	{
+		float: right;
+		z-index: 100;
+		
+		width: 25%;
+		height: 30em;
+		
+		margin-left: 1em;
+}
+
+#halterung,
+#baumart,
+#lieferung,
+#daten	{
+		float: left;
+		margin: 0 1.2em .8em 0;
+}
+
+h2	{
+		margin: .1em 0 .8em 0;
+}
+
+.schmuck_div	{
+/* 		float: left; */
+		margin: 0 2em .65em 0;
+}
+
+.anzahl	{
+		width: 3.2em;
+		margin-left: 1.2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
