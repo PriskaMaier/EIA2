@@ -19,14 +19,21 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
         <title>Aufg.10 - FormElements: Weihnachtsbaumkonfigurator</title>
 		
 		<script src="form_main.js"></script>
-		<script src="items.js"></script>
+		<script src="form_items.js"></script>
 	</head>
 	
 	<body>
 	
 		<fieldset id="bestellung-container"><legend>Bestellübersicht</legend>
 			<div id="bestellung">
+				<div id="best-auswahl">
+				</div>
+				
+				<div id="best-gesamtpreis">
+				</div>
 			</div>
+			
+			<button id="best-button" type="button">Bestellung prüfen</button>
 		</fieldset>
 		
 		<fieldset id="baum-container"><legend>Baumauswahl</legend>
@@ -36,6 +43,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 				
 				<div id="baumart-box">
 				</div>
+				
 			</div>
 			
 			<div id="halterung">
@@ -55,26 +63,23 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 			
 		</fieldset>
 		
-		<fieldset id="kundendaten-container"><legend>Ihre Daten</legend>
+		<fieldset id="lieferung-container"><legend>Lieferoptionen</legend>
 			
-			<div id="lieferung">
-				<h2>Lieferoptionen</h2>
-			
-<!-- 				<select name="lieferung"> -->
-<!-- 					<option value="standard">Standard</option> -->
-<!-- 					<option value="express">Express</option> -->
-<!-- 				</select> -->
+			<div id="lieferung-box">
 			</div>
+		</fieldset>
 			
-			<div id="daten">
-<!-- 				<input type="text" name="vorname" placeholder="Vorname" required/><br> -->
-<!-- 				<input type="text" name="nachname" placeholder="Nachname" required/><br> -->
-<!-- 				<input type="text" name="strasse_nr" placeholder="Straße und Hausnr." required/><br> -->
-<!-- 				<input type="text" name="plz" placeholder="Postleitzahl" required/><br> -->
-<!-- 				<input type="text" name="ort" placeholder="Ort" required/><br><br> -->
+		<fieldset id="kundendaten-container"><legend>Deine Daten</legend>	
+			
+			<div id="daten-box">
+				<input type="text" name="vorname" placeholder="Vorname" required/><br>
+				<input type="text" name="nachname" placeholder="Nachname" required/><br>
+				<input type="text" name="strasse_nr" placeholder="Straße und Hausnr." required/><br>
+				<input type="text" name="plz" placeholder="Postleitzahl" required/><br>
+				<input type="text" name="ort" placeholder="Ort" required/><br><br>
 				
-<!-- 				<input type="email" name="email" placeholder="E-Mail" required/><br> -->
-<!-- 				<input type="text" name="telefon" placeholder="Telefonnr."/><br> -->
+				<input type="email" name="email" placeholder="E-Mail" required/><br>
+				<input type="text" name="telefon" placeholder="Telefonnr."/><br>
 			</div>
 		</fieldset>
 

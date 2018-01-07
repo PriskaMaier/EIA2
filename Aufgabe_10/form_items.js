@@ -36,5 +36,10 @@ var Aufg_10;
         { name: "Figuranh\xE4nger - Nussknacker", preis: .8 },
         { name: "Figuranh\xE4nger - Stern", preis: .8 }
     ];
+    Aufg_10.lieferungA = [
+        { name: "Standardlieferung (Zustellung in 5-7 Werktagen)", preis: 0 },
+        { name: "Premiumlieferung (Zustellung in 3 Werktagen)", preis: 3 },
+        { name: "Expresslieferung (Zustellung am n\xE4chsten Tag)", preis: 6 }
+    ];
 })(Aufg_10 || (Aufg_10 = {}));
 //# sourceMappingURL=form_items.js.map

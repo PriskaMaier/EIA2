@@ -12,21 +12,22 @@ namespace Aufg_10    {
     
     window.addEventListener("load", createItems);
     
-//    window.addEventListener("change", update);
+    window.addEventListener("change", updateOrder);
+     
+    let wk_baum : string[] = [baumA[0].name, "" + baumA[0].preis];
+    let wk_halterung : string[] = [halterungA[0].name, "" + halterungA[0].preis];
+    let wk_schmuck : string[][] = [];
+    let wk_lieferoption : string[] = [lieferungA[0].name, "" + lieferungA[0].preis];
     
-    let b_input : HTMLInputElement[] = [];
-    let h_input : HTMLInputElement[] = [];   
-    let s_input : HTMLInputElement[] = [];
+    let vorname : HTMLInputElement;
+    let nachname : HTMLInputElement;
+    let str_nr : HTMLInputElement;
+    let plz : HTMLInputElement;
+    let ort : HTMLInputElement;
+    let email : HTMLInputElement;
+    let tel : HTMLInputElement;
+    let label : HTMLLabelElement;
     
-    let baum : HTMLElement;
-    let halterung : HTMLElement;
-    let schmuck : HTMLElement;
-    let bestellung : HTMLElement;
-    let bestellbutton : HTMLElement;
-    
-//    function init () : void {
-//        
-//    }
     
     function createItems () : void {
         
@@ -91,7 +92,6 @@ namespace Aufg_10    {
             let s_anz : HTMLInputElement = document.createElement("input");
             s_anz.type = "number";
             s_anz.name = "schmuck-anz";
-            s_anz.value = "schmuck-anz";
             s_anz.id = "s-anz_" + i;
             s_anz.className = "anzahl";
             s_anz.min = "0";
@@ -99,72 +99,160 @@ namespace Aufg_10    {
             s_anz.step = "1";
             s_div.appendChild(s_anz);
         }
+        
+        //lieferoptionen
+        let lieferung_box : HTMLDivElement = <HTMLDivElement>document.getElementById("lieferung-box");
+        
+        let l_select : HTMLSelectElement = document.createElement("select");
+        
+        l_select.name = "l_select";
+        l_select.id = "l_select";
+        lieferung_box.appendChild(l_select);
+        
+        for (let i : number = 0; i < lieferungA.length; i++) {
+            let l_option : HTMLElement = document.createElement("option");
+            l_option.innerText = lieferungA[i].name + " - " + lieferungA[i].preis + " \u20AC";
+            l_option.id = "l_" + lieferungA[i].name;
+            l_select.appendChild(l_option);  
+        }
+        
+        //kundendaten
+        let daten : HTMLDivElement = <HTMLDivElement>document.getElementById("daten-box");
+        
+        vorname = document.createElement("input");
+        vorname.type = "text";
+        vorname.name = "d_vorname";
+        vorname.placeholder = "Vorname";
+        vorname.required = true;
+        daten.appendChild(vorname);
+        
+        nachname = document.createElement("input");
+        nachname.type = "text";
+        nachname.name = "d_nachname";
+        nachname.placeholder = "Nachname";
+        nachname.required = true;
+        daten.appendChild(nachname);
+        
+        str_nr = document.createElement("input");
+        str_nr.type = "text";
+        str_nr.name = "d_str_nr";
+        str_nr.placeholder = "Stra\xDFe und Hausnummer";
+        str_nr.required = true;
+        daten.appendChild(str_nr);
+        
+        plz = document.createElement("input");
+        plz.type = "text";
+        plz.name = "d_str_nr";
+        plz.placeholder = "Postleitzahl";
+        plz.required = true;
+        daten.appendChild(plz);
+        
+        ort = document.createElement("input");
+        ort.type = "text";
+        ort.name = "d_str_nr";
+        ort.placeholder = "Ort";
+        ort.required = true;
+        daten.appendChild(ort);
+        
+        email = document.createElement("input");
+        email.type = "email";
+        email.name = "d_str_nr";
+        email.placeholder = "E-Mail";
+        email.required = true;
+        daten.appendChild(email);
+        
+        tel = document.createElement("input");
+        tel.type = "text";
+        tel.name = "d_str_nr";
+        tel.placeholder = "Telefonnummer";
+        tel.required = false;
+        daten.appendChild(tel);
+        
     }
     
-        function createOrder (_event : Event) : void  {
+    
+    function updateOrder (_event : Event) : void  {
         let target : HTMLInputElement = <HTMLInputElement>_event.target;
-        let itemanzahl : HTMLInputElement[] = [];
+        
+        let anzahl : HTMLInputElement[] = [];
         let checkedboxes : HTMLInputElement[] = [];
         
-        let summe : number = 0;
-        
-        let best : HTMLDivElement = <HTMLDivElement>document.getElementById("bestellung");
+        let gesamt : number = 0;
         
         for (let i : number = 0; i < baumA.length; i++) {
-            if (target.value == baumA[i].name && target.id == "b_select")   {
-                
+            if (target.value == baumA[i].name && target.id == "b_select") {
+                wk_baum[0] = baumA[i].name;
+                wk_baum[1] = "" + baumA[i].preis;
             }
         }
-            
+        
         for (let i : number = 0; i < halterungA.length; i++) {
-            if (target.value == baumA[i].name && target.id == "b_select")   {
-                
+            if (target.value == halterungA[i].name && target.id == "h_select") {
+                wk_halterung[0] = halterungA[i].name;
+                wk_halterung[1] = "" + halterungA[i].preis;
             }
         }
-            
+        
         for (let i : number = 0; i < schmuckA.length; i++) {
-            if (target.value == baumA[i].name && target.id == "b_select")   {
-                
+            anzahl[i] = <HTMLInputElement>document.getElementById("s-anz_" + i);
+            checkedboxes[i] = <HTMLInputElement>document.getElementById("s_" + i);
+            
+            if (target.id == "s-anz_" + i && target.id == "s_" + i) {
+                wk_schmuck[0] = [schmuckA[i].name, "" + (schmuckA[i].preis * parseInt(anzahl[i].value))];
             }
         }
         
-        summe = parseFloat(baum[1]) + parseFloat(halterung[1]);
+        for (let i : number = 0; i < lieferungA.length; i++) {
+            if (target.value == lieferungA[i].name && target.id == "l_select") {
+                wk_lieferoption[0] = lieferungA[i].name;
+                wk_lieferoption[1] = "" + lieferungA[i].preis;
+            }
+        }
         
+        
+        let warenkorb : HTMLDivElement = <HTMLDivElement>document.getElementById("best-auswahl");
+        
+        let button : HTMLButtonElement = <HTMLButtonElement>document.getElementById("best-button");
+        button.addEventListener("mousedown", handleMouseDown);
+        
+        warenkorb.innerHTML += "" + wk_baum[0] + " - " + wk_baum[1] + "â‚¬ <br>";
+        warenkorb.innerHTML += "" + wk_halterung[0] + " - " + wk_halterung[1] + "\u20AC <br>";
+        warenkorb.innerHTML += "" + wk_lieferoption[0] + " " + wk_lieferoption[1] + "â‚¬ <br>";
+        
+        gesamt = parseFloat(wk_baum[1]) + parseFloat(wk_halterung[1]) + parseFloat(wk_lieferoption[1]);
+        
+        for (let i : number = 0; i < anzahl.length; i++) {
+            if (checkedboxes[i] != null && checkedboxes[i].checked == true) {
+                gesamt += parseFloat(wk_schmuck[i][1]);
+                warenkorb.innerHTML += "" + wk_schmuck[i][0] + " - " + wk_schmuck[i][1] + "â‚¬ <br>";
+            }
+        }
+        
+        let gesamtpreis : HTMLDivElement = <HTMLDivElement>document.getElementById("best-gesamtpreis");
+        gesamtpreis.innerHTML += "Gesamtpreis: " + Math.round(gesamt) + "\u20AC <br>";
     }
     
-    function handleMouseDownChange (_event : MouseEvent) : void {
     
+    function handleMouseDown (_event : MouseEvent) : void {  
+        if (vorname.checkValidity() == false || nachname.checkValidity() == false || str_nr.checkValidity() == false || plz.checkValidity() == false || ort.checkValidity() == false || email.checkValidity() == false) {
+           alert("Bitte überprüfe deine Daten, die Angaben sind nicht korrekt."); 
+        }
+        else {
+            alert("Vielen Dank, deine Bestellung wird verarbeitet!");
+        }
     }
     
 }
 
 
 
-//        Number.prototype.formatMoney = function(places, symbol, thousand, decimal) {
-//            places = !isNaN(places = Math.abs(places)) ? places : 2;
-//            symbol = symbol !== undefined ? symbol : "$";
-//            thousand = thousand || ",";
-//            decimal = decimal || ".";
-//            var number = this,
-//                negative = number < 0 ? "-" : "",
-//                i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
-//                j = (j = i.length) > 3 ? j % 3 : 0;
-//            return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
-//        };
-
 
     
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
+      
     
     
 

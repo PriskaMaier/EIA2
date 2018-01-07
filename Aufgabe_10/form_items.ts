@@ -46,6 +46,33 @@ namespace Aufg_10    {
                             { name : "Figuranh\xE4nger - Stern", preis : .8 }       
         ];
     
+        export let lieferungA : Items[] = [
+                            { name : "Standardlieferung (Zustellung in 5-7 Werktagen)", preis : 0 },
+                            { name : "Premiumlieferung (Zustellung in 3 Werktagen)", preis : 3 },
+                            { name : "Expresslieferung (Zustellung am n\xE4chsten Tag)", preis : 6 }
+        ];
+    
+//    export let b : string[][] = [];
+//    export let h : string[][] = [];
+//    export let l : string[][] = [];
+//    
+//    
+//    for (let i : number = 0; i < baumA.length; i++) {
+//        let temp: any = [baumA[i].name, baumA[i].preis]; 
+//        b.push(temp);
+//    }
+//    
+//    for (let i : number = 0; i < halterungA.length; i++) {
+//        let temp: any = [halterungA[i].name, halterungA[i].preis]; 
+//        h.push(temp);
+//    }
+//    
+//    for (let i : number = 0; i < lieferungA.length; i++) {
+//        let temp: any = [lieferungA[i].name, lieferungA[i].preis]; 
+//        l.push(temp);
+//    }
+    
+    
 }
 
 
