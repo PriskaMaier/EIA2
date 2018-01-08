@@ -142,6 +142,31 @@ namespace Aufg_9    {
 //        }
 //    }
     
+    function handleKeyDown(_event: KeyboardEvent): void {
+
+        if (_event.keyCode > 64 && _event.keyCode < 91) {
+            selectedLetter = String.fromCharCode(_event.keyCode);
+
+            let div_list: NodeListOf<HTMLDivElement> = <NodeListOf<HTMLDivElement>>document.getElementsByClassName("letterbox");
+
+
+            for (let i: number = 0; i < div_list.length; i++) {
+
+                if (selectedLetter == div_list[i].id) {
+                    div_list[i].style.backgroundColor = "#ebebeb";
+                    div_list[i].style.color = "black";
+                }
+
+                else if (selectedLetter != div_list[i].id) {
+                    div_list[i].style.backgroundColor = "#4e4f4e";
+                    div_list[i].style.color = "white";
+                }
+            }
+        }
+    }
+    
+    document.addEventListener("keydown", handleKeyDown);
+    
     function handleAlt (_event : KeyboardEvent) : void  {
         
         if (_event.keyCode == 18)   {
