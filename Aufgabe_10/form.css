@@ -9,26 +9,81 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
  
 
 body	{
-		font-family: 'Oswald', sans-serif;
+		font-family: 'Playfair Display', serif;
+		color: #fcfcfc;
+		background-color: #1b1919;
+}
+
+#header-banner	{
+		position: relative;
+		width: 100%;
+		height: 20%;
+		margin-bottom: 4.5em;
+		
+		background-color: white;
+		text-align: center;
+}
+
+header h1	{
+		font-family: 'Sail', cursive;
+		font-size: 55px;
+		
+		color: black;
+		
+		padding: .15em 0;
+		margin: .8em 0;
+}
+
+header img	{
+		position: absolute;
+		top: 6.5em;
+		left: 30%;
+		
+		height: 10em;
+		width: 40%;
+		
+		vertical-align: middle;
+		display: inline-block;
 }
 
 #bestellung-container	{
-		float: right;
+		position: fixed;
+		right: .2em;
+		top: 11em;
+
 		margin-left: 1em;
 		z-index: 100;
 		
 		width: 25%;
-		height: 30em;
+		height: 12em;
 		
-		box-shadow: 0px 5px 18px 0px rgba(0,0,0,0.22);
+		background-color: #7cae74e6;
+		box-shadow: 0px 5px 18px 0px rgba(186, 186, 186, 0.44);
+}
+
+#bestellung-container hr	{
+		text-align: center;
+		width: 40%;
+}
+
+#best-button	{
+		display: inline-block;
+		background-color: white;
+		
+		cursor: pointer;
 }
 
 #halterung,
 #baumart,
-#lieferung,
-#daten	{
+#schmuck-box,
+#lieferung-box,
+#daten-box	{
 		float: left;
-		margin: 0 1.2em .8em 0;
+		margin: 1em 4em 1.5em 1.5em;
+}
+
+legend	{
+		font-size: 30px;
 }
 
 h2	{
@@ -36,8 +91,8 @@ h2	{
 }
 
 .schmuck_div	{
-/* 		float: left; */
-		margin: 0 2em .65em 0;
+		margin: 1em 2em 1em 0;
+		font-size: 16px;
 }
 
 .anzahl	{
@@ -45,7 +100,17 @@ h2	{
 		margin-left: 1.2em;
 }
 
+input	{
+		margin: .2em 0;
+}
 
+input:invalid	{
+		box-shadow: 6px 5px 16px 0px rgba(227, 24, 24, 0.9);
+}
+
+input:valid	{
+		box-shadow: none;
+}
 
 
 

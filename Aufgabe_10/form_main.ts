@@ -215,21 +215,22 @@ namespace Aufg_10    {
         let button : HTMLButtonElement = <HTMLButtonElement>document.getElementById("best-button");
         button.addEventListener("mousedown", handleMouseDown);
         
-        warenkorb.innerHTML += "" + wk_baum[0] + " - " + wk_baum[1] + "€ <br>";
+        warenkorb.innerHTML = "<hr>"
+        warenkorb.innerHTML += "" + wk_baum[0] + " - " + wk_baum[1] + "\u20AC <br>";
         warenkorb.innerHTML += "" + wk_halterung[0] + " - " + wk_halterung[1] + "\u20AC <br>";
-        warenkorb.innerHTML += "" + wk_lieferoption[0] + " " + wk_lieferoption[1] + "€ <br>";
+        warenkorb.innerHTML += "" + wk_lieferoption[0] + " " + wk_lieferoption[1] + "\u20AC <br>";
         
         gesamt = parseFloat(wk_baum[1]) + parseFloat(wk_halterung[1]) + parseFloat(wk_lieferoption[1]);
         
         for (let i : number = 0; i < anzahl.length; i++) {
             if (checkedboxes[i] != null && checkedboxes[i].checked == true) {
                 gesamt += parseFloat(wk_schmuck[i][1]);
-                warenkorb.innerHTML += "" + wk_schmuck[i][0] + " - " + wk_schmuck[i][1] + "€ <br>";
+                warenkorb.innerHTML += "" + wk_schmuck[i][0] + " - " + wk_schmuck[i][1] + "\u20AC <br>";
             }
         }
         
         let gesamtpreis : HTMLDivElement = <HTMLDivElement>document.getElementById("best-gesamtpreis");
-        gesamtpreis.innerHTML += "Gesamtpreis: " + Math.round(gesamt) + "\u20AC <br>";
+        gesamtpreis.innerHTML += "<hr> Gesamtpreis: " + Math.round(gesamt) + "\u20AC <br>";
     }
     
     
