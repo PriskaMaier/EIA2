@@ -1,0 +1,159 @@
+/*
+Aufgabe: Nr. 10 - FormElements: Weihnachtsbaumkonfigurator
+Name: Priska Maier
+Matrikel: 256326
+Datum: 07.01.18
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+ */
+ 
+
+body	{
+		font-family: 'Playfair Display', serif;
+		color: #fcfcfc;
+		background-color: #1b1919;
+}
+
+#header-banner	{
+		position: relative;
+		width: 100%;
+		height: 20%;
+		margin-bottom: 4.5em;
+		
+		background-color: white;
+		text-align: center;
+}
+
+header h1	{
+		font-family: 'Sail', cursive;
+		font-size: 55px;
+		
+		color: black;
+		
+		padding: .15em 0;
+		margin: .8em 0;
+}
+
+header img	{
+		position: absolute;
+		top: 6.5em;
+		left: 30%;
+		
+		height: 10em;
+		width: 40%;
+		
+		vertical-align: middle;
+		display: inline-block;
+}
+
+#bestellung-container	{
+		position: fixed;
+		right: .2em;
+		top: 11em;
+
+		margin-left: 1em;
+		z-index: 100;
+		
+		width: 25%;
+		height: 12em;
+		
+		background-color: #7cae74e6;
+		box-shadow: 0px 5px 18px 0px rgba(186, 186, 186, 0.44);
+}
+
+#bestellung-container hr	{
+		margin: .8em auto;
+		width: 40%;
+}	
+
+#halterung,
+#baumart,
+#schmuck-box,
+#lieferung-box,
+#daten-box	{
+		float: left;
+		margin: 1em 4em 1.5em 1.5em;
+}
+
+legend	{
+		font-size: 30px;
+}
+
+h2	{
+		margin: .1em 0 .8em 0;
+}
+
+.schmuck_div	{
+		margin: 1em 2em 1em 0;
+		font-size: 16px;
+}
+
+.schmuck_div label	{
+		padding-left: .6em;
+}
+
+.anzahl	{
+		width: 3.2em;
+		margin-left: 1.2em;
+}
+
+#kundendaten-container	{
+		padding-bottom: 6em;
+		margin-bottom: 3.5em;
+}
+
+#daten-box div	{
+		margin-bottom: .8em;
+}
+
+input	{
+		margin: .2em 0;
+}
+
+input:invalid	{
+		box-shadow: 0px 0px 5px 2px rgba(227, 24, 24, 0.9);
+}
+
+input:valid	{
+		box-shadow: none;
+}
+
+#best-button	{
+		position: relative;
+		top: 10.1em;
+		left: -31.7em;
+		
+		display: inline-block;
+		border-radius: 6px;
+		border: 1px solid #dcdcdc;
+		padding: .4em 1.5em;
+		
+		background-color: #ffffff;
+		box-shadow: inset 0px 1px 0px 0px #ffffff;
+		
+		font-family:'Playfair Display', serif;
+		font-weight: bold;
+		font-size: 15px;
+		color: #383838;
+		
+		cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
