@@ -1,8 +1,8 @@
 <!-- 
-Aufgabe: Nr. 11 - FormElements: Weihnachtsbaumkonfigurator
+Aufgabe: Nr. 11 - FormElements: Weihnachtsbaumkonfigurator Remote
 Name: Priska Maier
 Matrikel: 256326
-Datum: 07.01.18
+Datum: 14.01.18
 	
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
  -->
@@ -16,7 +16,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 		<link rel="stylesheet" type="text/css" href="form_2.css">
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Sail" rel="stylesheet">
         
-        <title>Aufg.11 - FormElements: Weihnachtsbaumkonfigurator</title>
+        <title>Aufg.11 - FormElements: Weihnachtsbaumkonfigurator Remote</title>
 		
 		<script src="form_2_main.js"></script>
 		<script src="form_2_items.js"></script>
@@ -30,59 +30,63 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 			</div>
 			<img src="holly-header.png" alt="holly">
 		</header>
+		
+		<form action="https://priskamaier-eia2.herokuapp.com" method="get">
 	
-		<fieldset id="bestellung-container">
-			<div id="bestellung" style="text-align:center">
-			
-				<h2>Bestellübersicht</h2>
+			<fieldset id="bestellung-container">
+				<div id="bestellung" style="text-align:center">
 				
-				<div id="best-auswahl">
+					<h2>Bestellübersicht</h2>
+					
+					<div id="best-auswahl">
+					</div>
+					
 				</div>
 				
-			</div>
+			</fieldset>
 			
-		</fieldset>
-		
-		<fieldset id="baum-container"><legend>Baumauswahl</legend>
-		
-			<div id="baumart">
-				<h2>Baumart</h2>
-				
-				<div id="baumart-box">
+			<fieldset id="baum-container"><legend>Baumauswahl</legend>
+			
+				<div id="baumart">
+					<h2>Baumart</h2>
+					
+					<div id="baumart-box">
+					</div>
+					
 				</div>
 				
-			</div>
+				<div id="halterung">
+					<h2>Halterung</h2>
+					
+					<div id="halterung-box">
+					</div>
+					
+				</div>
+			</fieldset>
 			
-			<div id="halterung">
-				<h2>Halterung</h2>
+			
+			<fieldset id="schmuck-container"><legend>Schmuck</legend>
 				
-				<div id="halterung-box">
+				<div id="schmuck-box">	
 				</div>
 				
-			</div>
-		</fieldset>
+			</fieldset>
+			
+			<fieldset id="lieferung-container"><legend>Lieferoptionen</legend>
+				
+				<div id="lieferung-box">
+				</div>
+			</fieldset>
+				
+			<fieldset id="kundendaten-container"><legend>Deine Daten</legend>	
+				
+				<div id="daten-box">
+				</div>
+				
+			<button id="best-button" type="button">Bestellung prüfen</button>
+			</fieldset>
 		
-		
-		<fieldset id="schmuck-container"><legend>Schmuck</legend>
-			
-			<div id="schmuck-box">	
-			</div>
-			
-		</fieldset>
-		
-		<fieldset id="lieferung-container"><legend>Lieferoptionen</legend>
-			
-			<div id="lieferung-box">
-			</div>
-		</fieldset>
-			
-		<fieldset id="kundendaten-container"><legend>Deine Daten</legend>	
-			
-			<div id="daten-box">
-			</div>
-			
-		<button id="best-button" type="button">Bestellung prüfen</button>
-		</fieldset>
+		</form>
 
 	</body>
 </html>

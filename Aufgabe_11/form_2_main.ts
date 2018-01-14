@@ -1,8 +1,8 @@
 /*
-Aufgabe: Nr. 10 - FormElements: Weihnachtsbaumkonfigurator
+Aufgabe: Nr. 11 - FormElements: Weihnachtsbaumkonfigurator Remote
 Name: Priska Maier
 Matrikel: 256326
-Datum: 07.01.18
+Datum: 14.01.18
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
  */
@@ -16,8 +16,7 @@ namespace Aufg_11    {
     window.addEventListener("change", updateOrder);
      
     var wk_baum : string[] = [/*baumA[0].name, "" + baumA[0].preis*/];
-    //var baumArt: string[] = [posten[0].name, "" + posten[0].preis];
-    var wk_halterung : string[] = [halterungA[0].name, "" + halterungA[0].preis];
+    var wk_halterung : string[] = [/*halterungA[0].name, "" + halterungA[0].preis*/];
     var wk_schmuck : string[][] = [];
     var wk_lieferoption : string[] = [/*lieferungA[0].name, "" + lieferungA[0].preis*/];
     

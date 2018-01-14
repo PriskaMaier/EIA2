@@ -1,8 +1,8 @@
 /*
-Aufgabe: Nr. 10 - FormElements: Weihnachtsbaumkonfigurator
+Aufgabe: Nr. 11 - FormElements: Weihnachtsbaumkonfigurator Remote
 Name: Priska Maier
 Matrikel: 256326
-Datum: 07.01.18
+Datum: 14.01.18
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
  */
