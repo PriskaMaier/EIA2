@@ -14,11 +14,6 @@ namespace Aufg_11    {
     
     window.addEventListener("load", updateOrder);
     window.addEventListener("change", updateOrder);
-     
-    var wk_baum : string[] = [/*baumA[0].name, "" + baumA[0].preis*/];
-    var wk_halterung : string[] = [/*halterungA[0].name, "" + halterungA[0].preis*/];
-    var wk_schmuck : string[][] = [];
-    var wk_lieferoption : string[] = [/*lieferungA[0].name, "" + lieferungA[0].preis*/];
     
     var vorname : HTMLInputElement;
     var nachname : HTMLInputElement;
@@ -179,10 +174,7 @@ namespace Aufg_11    {
         d_kontakt.appendChild(tel);
         
         let button : HTMLButtonElement = <HTMLButtonElement>document.getElementById("best-button");
-        button.addEventListener("mousedown", handleMouseDown);
-        
-        console.log(halterungA[0].name, halterungA[0].preis);
-        
+        button.addEventListener("mousedown", handleMouseDown); 
     }
     
     
@@ -192,12 +184,25 @@ namespace Aufg_11    {
         let anzahl : HTMLInputElement[] = [];
         let checkedboxes : HTMLInputElement[] = [];
         
+        let wk_baum : string[] = [baumA[0].name, "" + baumA[0].preis];
+        let wk_halterung : string[] = [halterungA[0].name, "" + halterungA[0].preis];
+        let wk_schmuck : string[][] = [];
+        let wk_lieferoption : string[] = [lieferungA[0].name, "" + lieferungA[0].preis];
+        
         let gesamt : number = 0;
         
+        let warenkorb: HTMLDivElement = <HTMLDivElement>document.getElementById("best-auswahl");
+
+        warenkorb.innerHTML = "<hr>"
+        warenkorb.innerHTML += "" + wk_baum[0] + " - " + wk_baum[1] + " \u20AC <br>";
+        warenkorb.innerHTML += "" + wk_halterung[0] + " - " + wk_halterung[1] + " \u20AC <br>";
+        warenkorb.innerHTML += "" + wk_lieferoption[0] + " - " + wk_lieferoption[1] + " \u20AC <br>";
+        
         for (let i : number = 0; i < baumA.length; i++) {
-            if (target.value == baumA[i].name && target.id == "b_select") {
+            if (target.value == baumA[i].name && target.id == "b_" + baumA[i].name) {
                 wk_baum[0] = baumA[i].name;
                 wk_baum[1] = "" + baumA[i].preis;
+                console.log(baumA[i].name, baumA[i].preis);
             }
         }
         
@@ -225,20 +230,13 @@ namespace Aufg_11    {
         }
         
         
-        let warenkorb : HTMLDivElement = <HTMLDivElement>document.getElementById("best-auswahl");
-        
-        warenkorb.innerHTML = "<hr>"
-        warenkorb.innerHTML += "" + wk_baum[0] + " - " + wk_baum[1] + " \u20AC <br>";
-        warenkorb.innerHTML += "" + wk_halterung[0] + " - " + wk_halterung[1] + " \u20AC <br>";
-        warenkorb.innerHTML += "" + wk_lieferoption[0] + " - " + wk_lieferoption[1] + " \u20AC <br>";
-        
         gesamt = parseFloat(wk_baum[1]) + parseFloat(wk_halterung[1]) + parseFloat(wk_lieferoption[1]);
 
         warenkorb.innerHTML += "<hr> Gesamtpreis: " + Math.round(gesamt) + " \u20AC <br>";
         
         for (let i : number = 0; i < anzahl.length; i++) {
             if (checkedboxes[i] != null && checkedboxes[i].checked == true) {
-                gesamt += parseFloat(wk_schmuck[i][1]);
+                gesamt += parseFloat(wk_schmuck[i][0]);
                 warenkorb.innerHTML += "" + wk_schmuck[i][0] + " - " + wk_schmuck[i][1] + " \u20AC <br>";
             }
         }

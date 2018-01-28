@@ -11,10 +11,6 @@ var Aufg_11;
     window.addEventListener("load", createItems);
     window.addEventListener("load", updateOrder);
     window.addEventListener("change", updateOrder);
-    var wk_baum = [];
-    var wk_halterung = [];
-    var wk_schmuck = [];
-    var wk_lieferoption = [];
     var vorname;
     var nachname;
     var str_nr;
@@ -142,17 +138,26 @@ var Aufg_11;
         d_kontakt.appendChild(tel);
         let button = document.getElementById("best-button");
         button.addEventListener("mousedown", handleMouseDown);
-        console.log(Aufg_11.halterungA[0].name, Aufg_11.halterungA[0].preis);
     }
     function updateOrder(_event) {
         let target = _event.target;
         let anzahl = [];
         let checkedboxes = [];
+        let wk_baum = [Aufg_11.baumA[0].name, "" + Aufg_11.baumA[0].preis];
+        let wk_halterung = [Aufg_11.halterungA[0].name, "" + Aufg_11.halterungA[0].preis];
+        let wk_schmuck = [];
+        let wk_lieferoption = [Aufg_11.lieferungA[0].name, "" + Aufg_11.lieferungA[0].preis];
         let gesamt = 0;
+        let warenkorb = document.getElementById("best-auswahl");
+        warenkorb.innerHTML = "<hr>";
+        warenkorb.innerHTML += "" + wk_baum[0] + " - " + wk_baum[1] + " \u20AC <br>";
+        warenkorb.innerHTML += "" + wk_halterung[0] + " - " + wk_halterung[1] + " \u20AC <br>";
+        warenkorb.innerHTML += "" + wk_lieferoption[0] + " - " + wk_lieferoption[1] + " \u20AC <br>";
         for (let i = 0; i < Aufg_11.baumA.length; i++) {
-            if (target.value == Aufg_11.baumA[i].name && target.id == "b_select") {
+            if (target.value == Aufg_11.baumA[i].name && target.id == "b_" + Aufg_11.baumA[i].name) {
                 wk_baum[0] = Aufg_11.baumA[i].name;
                 wk_baum[1] = "" + Aufg_11.baumA[i].preis;
+                console.log(Aufg_11.baumA[i].name, Aufg_11.baumA[i].preis);
             }
         }
         for (let i = 0; i < Aufg_11.halterungA.length; i++) {
@@ -174,16 +179,11 @@ var Aufg_11;
                 wk_lieferoption[1] = "" + Aufg_11.lieferungA[i].preis;
             }
         }
-        let warenkorb = document.getElementById("best-auswahl");
-        warenkorb.innerHTML = "<hr>";
-        warenkorb.innerHTML += "" + wk_baum[0] + " - " + wk_baum[1] + " \u20AC <br>";
-        warenkorb.innerHTML += "" + wk_halterung[0] + " - " + wk_halterung[1] + " \u20AC <br>";
-        warenkorb.innerHTML += "" + wk_lieferoption[0] + " - " + wk_lieferoption[1] + " \u20AC <br>";
         gesamt = parseFloat(wk_baum[1]) + parseFloat(wk_halterung[1]) + parseFloat(wk_lieferoption[1]);
         warenkorb.innerHTML += "<hr> Gesamtpreis: " + Math.round(gesamt) + " \u20AC <br>";
         for (let i = 0; i < anzahl.length; i++) {
             if (checkedboxes[i] != null && checkedboxes[i].checked == true) {
-                gesamt += parseFloat(wk_schmuck[i][1]);
+                gesamt += parseFloat(wk_schmuck[i][0]);
                 warenkorb.innerHTML += "" + wk_schmuck[i][0] + " - " + wk_schmuck[i][1] + " \u20AC <br>";
             }
         }
