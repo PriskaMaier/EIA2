@@ -1,0 +1,65 @@
+/*
+Aufgabe: Abschlussarbeit
+Name: Priska Maier
+Matrikel: 256326
+Datum: 23.02.18
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+
+html, body	{
+				width: 100%;
+				height: 100%;
+}
+
+canvas	{
+				display: block;
+				
+				padding-left: 0;
+				padding-right: 0;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 2em;
+}
+
+#main-canvas	{
+				z-index: 200;
+}
+
+img	{
+				display: none;
+}
+
+button {
+				z-index: 800;
+				cursor: help;
+				
+				position: absolute;
+				padding: 0;
+				
+				border: none;
+				background-color: transparent;
+				overflow: hidden;
+}
+
+#chesthitbox {
+				width: 200px;
+				height: 150px;
+				
+				top: 23em;
+				left: 50.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
