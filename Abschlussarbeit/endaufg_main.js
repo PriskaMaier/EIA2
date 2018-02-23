@@ -45,6 +45,7 @@ var Endaufgabe;
         Endaufgabe.imagedata = Endaufgabe.crc.getImageData(0, 0, canvas.width, canvas.height);
         c.drawUpperPartClosed();
         document.getElementById("chesthitbox").addEventListener("click", openChest);
+        document.getElementById("chesthitbox").addEventListener("touchstart", openChest);
     }
     function drawUpperPartOpened(_x, _y) {
         //oberer (wei�er) rand

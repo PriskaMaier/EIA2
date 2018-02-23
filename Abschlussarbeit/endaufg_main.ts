@@ -70,7 +70,7 @@ namespace Endaufgabe    {
         c.drawUpperPartClosed();
         
         document.getElementById("chesthitbox").addEventListener("click", openChest);
-            
+        document.getElementById("chesthitbox").addEventListener("touchstart", openChest);    
     }
     
     function drawUpperPartOpened(_x : number, _y : number) : void    {
