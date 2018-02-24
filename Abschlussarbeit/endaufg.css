@@ -67,10 +67,12 @@ button {
 }
 
 #chesthitbox {
-				width: 20vw;
-				height: 50vh;
+				position: absolute;
 				
-				top: 20%;
+				width: 24em;
+				height: 21em;
+				
+				top: 30%;
 				left: 40%;
 }
 
