@@ -13,7 +13,7 @@ var Endaufgabe;
             super(_x, _y);
         }
         draw() {
-            //untere haelfte   490, 280
+            //untere haelfte
             //oberer (wei�er) rand
             Endaufgabe.crc.fillStyle = "#c8bfb8";
             Endaufgabe.crc.fillRect(this.x, this.y, 200, 35);
@@ -75,7 +75,7 @@ var Endaufgabe;
             Endaufgabe.crc.closePath();
         }
         drawUpperPartClosed() {
-            //obere haelfte    490, 280
+            //obere haelfte
             //basis au�en (braun)
             Endaufgabe.crc.fillStyle = "#8e694c";
             Endaufgabe.crc.fillRect(this.x, this.y - 45, 200, 78);
@@ -104,7 +104,6 @@ var Endaufgabe;
             Endaufgabe.crc.fill();
             Endaufgabe.crc.fillRect(this.x + 80, this.y + 32, 40, 18);
             Endaufgabe.crc.closePath();
-            //eeeeiieeehhhh ?????
             Endaufgabe.crc.beginPath();
             Endaufgabe.crc.arc(this.x + 100, this.y + 48, 7, 0, 2 * Math.PI);
             Endaufgabe.crc.fillStyle = "#000000";

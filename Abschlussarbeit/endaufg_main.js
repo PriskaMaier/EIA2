@@ -9,6 +9,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var Endaufgabe;
 (function (Endaufgabe) {
     window.addEventListener("load", init);
+    let imagedata2;
     let obj = [];
     let vines_img;
     function init() {
@@ -67,8 +68,19 @@ var Endaufgabe;
     function openChest(_event) {
         Endaufgabe.crc.putImageData(Endaufgabe.imagedata, 0, 0);
         drawUpperPartOpened(490, 280);
+        //neues bild speichern sobald truhe offen ist
+        imagedata2 = Endaufgabe.crc.getImageData(0, 0, 1200, 650);
+        moveHeartUp();
+        window.setTimeout(moveHeartUp, 120);
     }
-    function animate() {
+    function moveHeartUp() {
+        Endaufgabe.crc.putImageData(imagedata2, 0, 0);
+        //herzteil
+        let h = new Endaufgabe.Heartpiece(590, 298, 5);
+        obj.push(h);
+        h.draw();
+        let audio = document.getElementById("getitem");
+        audio.play();
     }
 })(Endaufgabe || (Endaufgabe = {}));
 //# sourceMappingURL=endaufg_main.js.map

@@ -15,6 +15,7 @@ namespace Endaufgabe    {
     window.addEventListener("load", init);
     
     export let imagedata : ImageData;
+    let imagedata2 : ImageData;
     
     let obj : Objects[] = [];
     
@@ -25,6 +26,7 @@ namespace Endaufgabe    {
         
         let canvas : HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
+        
         
         //hintergrund
 //        crc.fillStyle = "#6a4d37";
@@ -53,7 +55,7 @@ namespace Endaufgabe    {
         //truhe
         let c = new Chest(490, 280);
         obj.push(c);
-       
+        
         
         for (let i : number = 0; i < obj.length; i++) {
             let o : Objects = obj[i];
@@ -96,12 +98,26 @@ namespace Endaufgabe    {
     function openChest (_event : MouseEvent)  : void    {
         crc.putImageData(imagedata, 0, 0);
         drawUpperPartOpened(490, 280);
+        
+        //neues bild speichern sobald truhe offen ist
+        imagedata2 = crc.getImageData(0, 0, 1200, 650);
+        
+        moveHeartUp();
+        window.setTimeout(moveHeartUp, 120);
     }
     
-    
-    function animate () : void  {
-      
+    function moveHeartUp () : void  {
+        crc.putImageData(imagedata2, 0, 0);
+        
+        //herzteil
+        let h = new Heartpiece(590, 298, 5);
+        obj.push(h);
+        h.draw();
+        
+        let audio : HTMLMediaElement = <HTMLMediaElement>document.getElementById("getitem");
+        audio.play();
     }
+    
 }
 
 

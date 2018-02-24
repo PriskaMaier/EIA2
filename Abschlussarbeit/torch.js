@@ -14,7 +14,7 @@ var Endaufgabe;
         }
         draw() {
             //standbeine
-            Endaufgabe.crc.beginPath(); //90, 220
+            Endaufgabe.crc.beginPath();
             Endaufgabe.crc.moveTo(this.x, this.y);
             Endaufgabe.crc.lineTo(this.x + 110, this.y + 330);
             Endaufgabe.crc.moveTo(this.x + 110, this.y);
@@ -63,7 +63,6 @@ var Endaufgabe;
             //licht
             Endaufgabe.crc.beginPath();
             var gradient = Endaufgabe.crc.createRadialGradient(this.x + 60, this.y - 60, 100, this.x + 60, this.y - 60, 130);
-            //            gradient.addColorStop(.6, "rgba(243, 194, 89, 0.31)");
             gradient.addColorStop(.02, "rgba(243, 130, 89, 0.4)");
             gradient.addColorStop(.98, "rgba(0, 0, 0, 0.001)");
             Endaufgabe.crc.arc(this.x + 60, this.y - 60, 115, 0, 2 * Math.PI);

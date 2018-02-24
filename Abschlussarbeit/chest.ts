@@ -17,7 +17,7 @@ namespace Endaufgabe    {
         }
         
         draw() : void   {   //zeichnet nur untere haelfte
-            //untere haelfte   490, 280
+            //untere haelfte
 
                 //oberer (weiﬂer) rand
                 crc.fillStyle = "#c8bfb8";
@@ -90,7 +90,7 @@ namespace Endaufgabe    {
         }
         
         drawUpperPartClosed() : void    {
-            //obere haelfte    490, 280
+            //obere haelfte
             
                 //basis auﬂen (braun)
                 crc.fillStyle = "#8e694c";
@@ -122,7 +122,7 @@ namespace Endaufgabe    {
                 crc.fill();
                 crc.fillRect(this.x + 80, this.y + 32, 40, 18);
                 crc.closePath();
-            //eeeeiieeehhhh ?????
+
                 crc.beginPath();
                 crc.arc(this.x + 100, this.y + 48, 7, 0, 2 * Math.PI);
                 crc.fillStyle = "#000000";
@@ -205,11 +205,6 @@ namespace Endaufgabe    {
             crc.fillRect(this.x + 80, this.y - 77, 40, 8);
             crc.closePath();
         }
-        
-//        openChest(_event: MouseEvent): void {
-//            crc.putImageData(imagedata, 0, 0);
-//            this.drawUpperPartOpened();
-//        }
         
     }
 }

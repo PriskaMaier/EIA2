@@ -20,6 +20,5 @@ namespace Endaufgabe    {
         }
         
         draw() : void {}
-
     }
 }

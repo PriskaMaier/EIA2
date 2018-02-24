@@ -13,6 +13,14 @@ html, body	{
 				height: 100%;
 }
 
+@font-face	{
+				font-family: "ReturnofGanon";
+				src: url("ReturnofGanon.eot")
+					 format("opentype");
+				src: url("ReturnofGanon.ttf")
+					 format("truetype");
+}
+
 canvas	{
 				display: block;
 				
@@ -20,15 +28,30 @@ canvas	{
 				padding-right: 0;
 				margin-left: auto;
 				margin-right: auto;
-				margin-top: 2em;
+				margin-top: 2vw;
 }
 
 #main-canvas	{
-				z-index: 200;
+				z-index: 100;
 }
 
 img	{
 				display: none;
+}
+
+#textbox	{
+				z-index: 200;
+				position: relative;
+				bottom: 20%;
+				margin: 0 auto;
+				padding: 1vw;
+				max-width: 26vw;
+				
+				font-family: "ReturnofGanon", sans-serif;
+				font-size: 32px;
+				text-align: center;
+				color: white;
+				background-color: black;
 }
 
 button {

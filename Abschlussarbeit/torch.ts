@@ -18,7 +18,7 @@ namespace Endaufgabe    {
         
         draw() : void   {   //zeichnet nur basis
             //standbeine
-            crc.beginPath(); //90, 220
+            crc.beginPath();
             crc.moveTo(this.x, this.y);
             crc.lineTo(this.x + 110, this.y + 330);
             crc.moveTo(this.x + 110, this.y);
@@ -72,7 +72,6 @@ namespace Endaufgabe    {
             //licht
             crc.beginPath();
             var gradient = crc.createRadialGradient(this.x + 60, this.y - 60, 100, this.x + 60, this.y - 60, 130);
-//            gradient.addColorStop(.6, "rgba(243, 194, 89, 0.31)");
             gradient.addColorStop(.02, "rgba(243, 130, 89, 0.4)");
             gradient.addColorStop(.98, "rgba(0, 0, 0, 0.001)");
             crc.arc(this.x + 60, this.y - 60, 115, 0, 2 * Math.PI);
