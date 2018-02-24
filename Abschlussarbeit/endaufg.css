@@ -28,7 +28,7 @@ canvas	{
 				padding-right: 0;
 				margin-left: auto;
 				margin-right: auto;
-				margin-top: 2vw;
+				margin-top: 2vh;
 }
 
 #main-canvas	{
@@ -42,7 +42,7 @@ img	{
 #textbox	{
 				z-index: 200;
 				position: relative;
-				bottom: 20%;
+				bottom: 10%;
 				margin: 0 auto;
 				padding: 1vw;
 				max-width: 26vw;
@@ -67,11 +67,11 @@ button {
 }
 
 #chesthitbox {
-				width: 200px;
-				height: 150px;
+				width: 20vw;
+				height: 50vh;
 				
-				top: 23em;
-				left: 50.5em;
+				top: 20%;
+				left: 40%;
 }
 
 
